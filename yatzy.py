@@ -38,19 +38,21 @@ class Yatzy:
         return  50
 
     @staticmethod
-    def ones( d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1): 
-            sum += 1
+    def ones(*numbers):
 
+        '''
+        Code smells:
+        - Code is duplicated
+        
+        Fixes:
+        - Make the code readable and undestandable
+        - Build a loop which accept multiple values
+        '''
+    
+        sum = 0
+        for number in numbers:
+            if number == 1:
+                sum += 1
         return sum
     
 
