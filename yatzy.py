@@ -18,15 +18,25 @@ class Yatzy:
         return total
 
     @staticmethod
-    def yatzy(dice):
-        counts = [0]*(len(dice)+1)
-        for die in dice:
-            counts[die-1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
-    
+    def yatzy(dices):
+        
+        '''
+        Code smells:
+        - A loop is too long and too deeply nested
+        
+        Fixes:
+        - Simplify the function
+        - Make the code readable and undestandable
+        '''
+        
+        firstDice = dices[0]
+        for dice in dices:
+            if dice == firstDice:
+                continue
+            else:
+                return 0
+        return  50
+
     @staticmethod
     def ones( d1,  d2,  d3,  d4,  d5):
         sum = 0
