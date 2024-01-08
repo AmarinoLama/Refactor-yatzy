@@ -1,13 +1,20 @@
 class Yatzy:
 
     @staticmethod
-    def chance(d1, d2, d3, d4, d5):
+    def chance(*numbers):
+        
+        '''
+        Code smells:
+        - A chain of routines passes tramp data
+        
+        Fixes:
+        - Make a loop which can accept multiple values
+        - Delete arguments (d1, d2, ...)
+        '''
+        
         total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+        for number in numbers:
+            total += number
         return total
 
     @staticmethod
