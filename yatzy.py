@@ -57,18 +57,21 @@ class Yatzy:
     
 
     @staticmethod
-    def twos( d1,  d2,  d3,  d4,  d5):
+    def twos(*numbers):
+        
+        '''
+        Code smells:
+        - Code is duplicated
+        
+        Fixes:
+        - Make the code readable and undestandable
+        - Build a loop which accept multiple values
+        '''
+    
         sum = 0
-        if (d1 == 2):
-             sum += 2
-        if (d2 == 2):
-             sum += 2
-        if (d3 == 2):
-             sum += 2
-        if (d4 == 2):
-             sum += 2
-        if (d5 == 2):
-             sum += 2
+        for number in numbers:
+            if number == 2:
+                sum += 2
         return sum
     
     @staticmethod
