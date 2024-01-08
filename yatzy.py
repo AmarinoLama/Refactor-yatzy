@@ -75,19 +75,22 @@ class Yatzy:
         return sum
     
     @staticmethod
-    def threes( d1,  d2,  d3,  d4,  d5):
-        s = 0
-        if (d1 == 3):
-             s += 3
-        if (d2 == 3):
-             s += 3
-        if (d3 == 3):
-             s += 3
-        if (d4 == 3):
-             s += 3
-        if (d5 == 3):
-             s += 3
-        return s
+    def threes(*numbers):
+        
+        '''
+        Code smells:
+        - Code is duplicated
+        
+        Fixes:
+        - Make the code readable and undestandable
+        - Build a loop which accept multiple values
+        '''
+    
+        sum = 0
+        for number in numbers:
+            if number == 3:
+                sum += 3
+        return sum
     
 
     def __init__(self, d1, d2, d3, d4, _5):
