@@ -36,21 +36,21 @@ def test_threes():
   
 
 def test_fours_test():
-        assert 12 == Yatzy(4,4,4,5,5).fours()
-        assert 8 == Yatzy(4,4,5,5,5).fours()
-        assert 4 == Yatzy(4,5,5,5,5).fours()
+        assert 12 == Yatzy().fours(4,4,4,5,5)
+        assert 8 == Yatzy().fours(4,4,5,5,5)
+        assert 4 == Yatzy().fours(4,5,5,5,5)
   
 
 def test_fives():
-        assert 10 == Yatzy(4,4,4,5,5).fives()
-        assert 15 == Yatzy(4,4,5,5,5).fives()
-        assert 20 == Yatzy(4,5,5,5,5).fives()
+        assert 10 == Yatzy().fives(4,4,4,5,5)
+        assert 15 == Yatzy().fives(4,4,5,5,5)
+        assert 20 == Yatzy().fives(4,5,5,5,5)
   
 
 def test_sixes_test():
-        assert 0 == Yatzy(4,4,4,5,5).sixes()
-        assert 6 == Yatzy(4,4,6,5,5).sixes()
-        assert 18 == Yatzy(6,5,6,6,5).sixes()
+        assert 0 == Yatzy().sixes(4,4,4,5,5)
+        assert 6 == Yatzy().sixes(4,4,6,5,5)
+        assert 18 == Yatzy().sixes(6,5,6,6,5)
   
 
 def test_one_pair():
