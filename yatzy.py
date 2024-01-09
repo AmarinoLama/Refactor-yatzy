@@ -96,9 +96,10 @@ class Yatzy:
         
         '''
         Code smells:
-
+        - A routine uses more features of another class than of its own class
         
         Fixes:
+        - Unify the class to make it static
         - Delete self argument
         - Build a loop which can accept multiple values
         '''
@@ -109,13 +110,23 @@ class Yatzy:
                 sum += 4
         return sum
 
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)): 
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+    def fives(*numbers):
+        
+        '''
+        Code smells:
+        - A routine uses more features of another class than of its own class
+        
+        Fixes:
+        - Unify the class to make it static
+        - Delete self argument
+        - Build a loop which can accept multiple values
+        '''
+    
+        sum = 0
+        for number in numbers:
+            if number == 5:
+                sum += 5
+        return sum
     
 
     def sixes(self):
