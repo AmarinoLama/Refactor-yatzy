@@ -46,7 +46,7 @@ class Yatzy:
         
         Fixes:
         - Make the code readable and undestandable
-        - Build a loop which accept multiple values
+        - Build a loop which can accept multiple values
         '''
     
         sum = 0
@@ -65,7 +65,7 @@ class Yatzy:
         
         Fixes:
         - Make the code readable and undestandable
-        - Build a loop which accept multiple values
+        - Build a loop which can accept multiple values
         '''
     
         sum = 0
@@ -83,7 +83,7 @@ class Yatzy:
         
         Fixes:
         - Make the code readable and undestandable
-        - Build a loop which accept multiple values
+        - Build a loop which can accept multiple values
         '''
     
         sum = 0
@@ -92,22 +92,22 @@ class Yatzy:
                 sum += 3
         return sum
     
+    def fours(*numbers):
+        
+        '''
+        Code smells:
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+        
+        Fixes:
+        - Delete self argument
+        - Build a loop which can accept multiple values
+        '''
     
-    def fours(self):
         sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4): 
+        for number in numbers:
+            if number == 4:
                 sum += 4
         return sum
-    
 
     def fives(self):
         s = 0
