@@ -148,18 +148,18 @@ class Yatzy:
         return sum
     
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
+    def score_pair(*dices):
+        
+        '''
+        adsadas
+        '''
+        
+        dices_sorted = list(sorted(dices, reverse=True))
+        for number in dices_sorted:
+            if dices.count(number) >= 2:
+                return number*2
         return 0
+
     
     @staticmethod
     def two_pair( d1,  d2,  d3,  d4,  d5):
