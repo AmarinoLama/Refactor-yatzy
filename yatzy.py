@@ -129,11 +129,22 @@ class Yatzy:
         return sum
     
 
-    def sixes(self):
+    def sixes(*numbers):
+        
+        '''
+        Code smells:
+        - A routine uses more features of another class than of its own class
+        
+        Fixes:
+        - Unify the class to make it static
+        - Delete self argument
+        - Build a loop which can accept multiple values
+        '''
+    
         sum = 0
-        for at in range(len(self.dice)): 
-            if (self.dice[at] == 6):
-                sum = sum + 6
+        for number in numbers:
+            if number == 6:
+                sum += 6
         return sum
     
     @staticmethod
