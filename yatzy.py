@@ -144,7 +144,13 @@ class Yatzy:
     def score_pair(*dices):
         
         '''
-        adsadas
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
         '''
         
         dices_sorted = list(sorted(dices, reverse=True))
@@ -158,7 +164,14 @@ class Yatzy:
     def two_pair(*dices):
 
         '''
-        sbnfahfioadf
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
+        - Simplify the code
         '''
 
         pair_counter = []
@@ -173,7 +186,13 @@ class Yatzy:
     def four_of_a_kind(*dices):
         
         '''
-        adashdahsohd
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
         '''
         
         dices_sorted = list(sorted(dices, reverse=True))
@@ -187,7 +206,13 @@ class Yatzy:
     def three_of_a_kind(*dices):
         
         '''
-        añjhsfijasfiojad
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
         '''
         
         dices_sorted = list(sorted(dices, reverse=True))
@@ -201,7 +226,14 @@ class Yatzy:
     def smallStraight(*dices):
         
         '''
-        asdaidjadj
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
+        - Simplify the code
         '''
         
         dices_sorted = sorted(dices)
@@ -216,7 +248,14 @@ class Yatzy:
     def largeStraight(*dices):
         
         '''
-        asdaidjadj
+        Code smells:
+        - A chain of routines passes tramp data
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
+        - Simplify the code
         '''
         
         dices_sorted = sorted(dices)
@@ -231,7 +270,14 @@ class Yatzy:
     def fullHouse(*dices):
         
         '''
-        sbnfahfioadf
+        Code smells:
+        - A loop is too long or too deeply nested
+        - A parameter list has too many parameters
+        
+        Fixes:
+        - Make the code more readable
+        - Build a loop which can accept multiple values
+        - Simplify the code
         '''
 
         noDuplicated = set(dices)
