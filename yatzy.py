@@ -228,34 +228,21 @@ class Yatzy:
     
 
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
+    def fullHouse(*dices):
+        
+        '''
+        sbnfahfioadf
+        '''
 
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2): 
-                _2 = True
-                _2_at = i+1
-            
-
-        for i in range(6):
-            if (tallies[i] == 3): 
-                _3 = True
-                _3_at = i+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
-        else:
-            return 0
+        noDuplicated = set(dices)
+        result = 0
+        switch = False
+        for number in noDuplicated:
+            if dices.count(number) >= 2 and len(noDuplicated) == 2:
+                if dices.count(number) == 3:
+                    result += number * 3
+                    switch = True
+                else: 
+                    result += number * dices.count(number)
+                    
+        return result if switch is True else 0
