@@ -26,16 +26,9 @@ class Yatzy:
         
         Fixes:
         - Simplify the function
-        - Make the code readable and undestandable
         '''
         
-        firstDice = dices[0]
-        for dice in dices:
-            if dice == firstDice:
-                continue
-            else:
-                return 0
-        return  50
+        return 50 if len(set(dices)) == 1 else 0
 
     @staticmethod
     def ones(*numbers):
