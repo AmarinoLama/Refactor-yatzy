@@ -1,0 +1,5 @@
+Cambiar test de yatzy no lista
+hay que cambiar de ones a sixes, nada de iterables (podemos usar el count)
+three and four_of_a_kind nada de iterables
+large and smallStraight no podemos usar esa lista (podemos usar un range) y sumar la puntuación
+noDuplicated cambiar los iterables, (podemos extraer el codigo de los modulos anteriores, para simplificar la posibilidad de error)
