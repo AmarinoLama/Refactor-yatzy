@@ -18,7 +18,7 @@ class Yatzy:
         return total
 
     @staticmethod
-    def yatzy(dices):
+    def yatzy(*dices):
         
         '''
         Code smells:
