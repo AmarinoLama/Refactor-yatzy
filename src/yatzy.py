@@ -32,7 +32,9 @@ class Yatzy:
 
     @staticmethod
     def ones(*numbers):
-
+        
+        #
+        
         '''
         Code smells:
         - Code is duplicated
@@ -48,6 +50,8 @@ class Yatzy:
     @staticmethod
     def twos(*numbers):
         
+        #
+        
         '''
         Code smells:
         - Code is duplicated
@@ -62,6 +66,8 @@ class Yatzy:
     @staticmethod
     def threes(*numbers):
         
+        #
+        
         '''
         Code smells:
         - Code is duplicated
@@ -74,6 +80,8 @@ class Yatzy:
         return numbers.count(3) * 3 if numbers.count(3) != 0 else 0
     
     def fours(*numbers):
+        
+        #
         
         '''
         Code smells:
@@ -89,6 +97,8 @@ class Yatzy:
 
     def fives(*numbers):
         
+        #
+        
         '''
         Code smells:
         - A routine uses more features of another class than of its own class
@@ -103,6 +113,8 @@ class Yatzy:
     
 
     def sixes(*numbers):
+        
+        #
         
         '''
         Code smells:
@@ -138,6 +150,8 @@ class Yatzy:
     @staticmethod
     def two_pair(*dices):
 
+        #
+        
         '''
         Code smells:
         - A chain of routines passes tramp data
@@ -201,6 +215,8 @@ class Yatzy:
     @staticmethod
     def smallStraight(*dices):
         
+        #
+        
         '''
         Code smells:
         - A chain of routines passes tramp data
@@ -213,9 +229,10 @@ class Yatzy:
         '''
         
         dices_sorted = sorted(dices)
+        stair = [x for x in range(1,5)]
         
-        if dices_sorted == [1,2,3,4,5]:
-            return 15
+        if dices_sorted == stair:
+            return sum(stair)
         else:
             return 0
 
@@ -223,6 +240,8 @@ class Yatzy:
     @staticmethod
     def largeStraight(*dices):
         
+        #
+        
         '''
         Code smells:
         - A chain of routines passes tramp data
@@ -235,9 +254,10 @@ class Yatzy:
         '''
         
         dices_sorted = sorted(dices)
+        stair = [x + 1 for x in range(1,6)]
         
-        if dices_sorted == [2,3,4,5,6]:
-            return 20
+        if dices_sorted == stair:
+            return sum(stair)
         else:
             return 0
     
