@@ -135,7 +135,6 @@ class Yatzy:
                 return number*2
         return 0
 
-    
     @staticmethod
     def two_pair(*dices):
 
@@ -150,13 +149,14 @@ class Yatzy:
         - Simplify the code
         '''
 
+        numNoDuped = list(set(dices))
         pair_counter = []
-        for number in dices:
-            if dices.count(number) >= 2 and number not in pair_counter:
+        for number in numNoDuped:
+            if (dices.count(number) == 2 or dices.count(number) == 3) and len(pair_counter) < 2:
                 pair_counter.append(number)
-                if len(pair_counter) == 2:
-                    return sum(pair_counter) * 2
-        return 0
+            elif dices.count(number) >= 4:
+                return dices.count(number) * 4
+        return sum(pair_counter) * 2 if len(pair_counter) == 2 else 0
     
     @staticmethod
     def four_of_a_kind(*dices):
