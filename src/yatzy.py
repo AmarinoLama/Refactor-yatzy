@@ -41,12 +41,8 @@ class Yatzy:
         - Make the code readable and undestandable
         - Build a loop which can accept multiple values
         '''
-    
-        sum = 0
-        for number in numbers:
-            if number == 1:
-                sum += 1
-        return sum
+        
+        return numbers.count(1) if numbers.count(1) != 0 else 0
     
 
     @staticmethod
@@ -61,11 +57,7 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        sum = 0
-        for number in numbers:
-            if number == 2:
-                sum += 2
-        return sum
+        return numbers.count(2) * 2 if numbers.count(2) != 0 else 0
     
     @staticmethod
     def threes(*numbers):
@@ -79,11 +71,7 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        sum = 0
-        for number in numbers:
-            if number == 3:
-                sum += 3
-        return sum
+        return numbers.count(3) * 3 if numbers.count(3) != 0 else 0
     
     def fours(*numbers):
         
@@ -97,11 +85,7 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        sum = 0
-        for number in numbers:
-            if number == 4:
-                sum += 4
-        return sum
+        return numbers.count(4) * 4 if numbers.count(4) != 0 else 0
 
     def fives(*numbers):
         
@@ -115,11 +99,7 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        sum = 0
-        for number in numbers:
-            if number == 5:
-                sum += 5
-        return sum
+        return numbers.count(5) * 5 if numbers.count(5) != 0 else 0
     
 
     def sixes(*numbers):
@@ -134,11 +114,7 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        sum = 0
-        for number in numbers:
-            if number == 6:
-                sum += 6
-        return sum
+        return numbers.count(6) * 6 if numbers.count(6) != 0 else 0
     
     @staticmethod
     def score_pair(*dices):
