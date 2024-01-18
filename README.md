@@ -4,5 +4,5 @@ Ejercicio de Emily Bache refactorizado. Este mismo ejercicio ha sido refactoriza
 
 Colaboradores:
 
-- Aman : https://github.com/DavBaquero
+- Aman : https://github.com/AmarinoLama
 - David Baquero : https://github.com/DavBaquero
