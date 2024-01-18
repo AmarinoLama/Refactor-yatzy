@@ -1,4 +1,13 @@
+from pips import Pips
+
 class Yatzy:
+    
+    NOPOINTS = 0
+    MAXPOINTS = 50
+
+    @staticmethod
+    def listRepeted(dices, min):
+        return list(filter(lambda x:dices.count(x)>=min,dices))
 
     @staticmethod
     def chance(*numbers):
@@ -28,10 +37,12 @@ class Yatzy:
         - Simplify the function
         '''
         
-        return 50 if len(set(dices)) == 1 else 0
+        return Yatzy.MAXPOINTS if len(set(dices)) == 1 else Yatzy.NOPOINTS
 
     @staticmethod
     def ones(*numbers):
+        
+        ONE = Pips.ONE.value
         
         #
         
@@ -44,12 +55,14 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
         
-        return numbers.count(1) if numbers.count(1) != 0 else 0
+        return numbers.count(ONE) if numbers.count(ONE) != 0 else Yatzy.NOPOINTS
     
 
     @staticmethod
     def twos(*numbers):
         
+        TWO = Pips.TWO.value
+        
         #
         
         '''
@@ -61,11 +74,13 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        return numbers.count(2) * 2 if numbers.count(2) != 0 else 0
+        return numbers.count(TWO) * TWO if numbers.count(TWO) != 0 else Yatzy.NOPOINTS
     
     @staticmethod
     def threes(*numbers):
         
+        THREE = Pips.THREE.value
+        
         #
         
         '''
@@ -77,10 +92,13 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        return numbers.count(3) * 3 if numbers.count(3) != 0 else 0
+        return numbers.count(THREE) * THREE if numbers.count(THREE) != 0 else Yatzy.NOPOINTS
     
+    @staticmethod
     def fours(*numbers):
         
+        FOUR = Pips.FOUR.value
+        
         #
         
         '''
@@ -93,10 +111,13 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        return numbers.count(4) * 4 if numbers.count(4) != 0 else 0
+        return numbers.count(FOUR) * FOUR if numbers.count(FOUR) != 0 else Yatzy.NOPOINTS
 
+    @staticmethod
     def fives(*numbers):
         
+        FIVE = Pips.FIVE.value
+        
         #
         
         '''
@@ -109,11 +130,13 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        return numbers.count(5) * 5 if numbers.count(5) != 0 else 0
+        return numbers.count(FIVE) * FIVE if numbers.count(FIVE) != 0 else Yatzy.NOPOINTS
     
-
+    @staticmethod
     def sixes(*numbers):
         
+        SIX = Pips.SIX.value
+        
         #
         
         '''
@@ -126,10 +149,14 @@ class Yatzy:
         - Build a loop which can accept multiple values
         '''
     
-        return numbers.count(6) * 6 if numbers.count(6) != 0 else 0
+        return numbers.count(SIX) * SIX if numbers.count(SIX) != 0 else Yatzy.NOPOINTS
     
     @staticmethod
     def score_pair(*dices):
+        
+        #
+        
+        TWO = Pips.TWO.value
         
         '''
         Code smells:
@@ -140,16 +167,16 @@ class Yatzy:
         - Make the code more readable
         - Build a loop which can accept multiple values
         '''
-        
-        dices_sorted = list(sorted(dices, reverse=True))
-        for number in dices_sorted:
-            if dices.count(number) >= 2:
-                return number*2
-        return 0
+    
+        return TWO * max(Yatzy.listRepeted(dices, TWO)) if Yatzy.listRepeted(dices, TWO) else Yatzy.NOPOINTS
 
     @staticmethod
     def two_pair(*dices):
 
+        TWO = Pips.TWO.value
+        THREE = Pips.THREE.value
+        FOUR = Pips.FOUR.value
+        
         #
         
         '''
@@ -166,14 +193,16 @@ class Yatzy:
         numNoDuped = list(set(dices))
         pair_counter = []
         for number in numNoDuped:
-            if (dices.count(number) == 2 or dices.count(number) == 3) and len(pair_counter) < 2:
+            if (dices.count(number) == TWO or dices.count(number) == THREE) and len(pair_counter) < TWO:
                 pair_counter.append(number)
-            elif dices.count(number) >= 4:
-                return dices.count(number) * 4
-        return sum(pair_counter) * 2 if len(pair_counter) == 2 else 0
+            elif dices.count(number) >= FOUR:
+                return dices.count(number) * FOUR
+        return sum(pair_counter) * TWO if len(pair_counter) == TWO else Yatzy.NOPOINTS
     
     @staticmethod
     def four_of_a_kind(*dices):
+        
+        FOUR = Pips.FOUR.value
         
         '''
         Code smells:
@@ -187,14 +216,16 @@ class Yatzy:
         
         dices_sorted = list(sorted(dices, reverse=True))
         for number in dices_sorted:
-            if dices.count(number) >= 4:
-                return number*4
-        return 0
+            if dices.count(number) >= FOUR:
+                return number * FOUR
+        return Yatzy.NOPOINTS
     
 
     @staticmethod
     def three_of_a_kind(*dices):
         
+        THREE = Pips.THREE.value
+        
         '''
         Code smells:
         - A chain of routines passes tramp data
@@ -207,11 +238,10 @@ class Yatzy:
         
         dices_sorted = list(sorted(dices, reverse=True))
         for number in dices_sorted:
-            if dices.count(number) >= 3:
-                return number*3
-        return 0
+            if dices.count(number) >= THREE:
+                return number * THREE
+        return Yatzy.NOPOINTS
     
-
     @staticmethod
     def smallStraight(*dices):
         
@@ -228,14 +258,7 @@ class Yatzy:
         - Simplify the code
         '''
         
-        dices_sorted = sorted(dices)
-        stair = [x for x in range(1,5)]
-        
-        if dices_sorted == stair:
-            return sum(stair)
-        else:
-            return 0
-
+        return sum(list(range(1,6))) if sorted(dices) == list(range(1,6)) else Yatzy.NOPOINTS
 
     @staticmethod
     def largeStraight(*dices):
@@ -253,13 +276,7 @@ class Yatzy:
         - Simplify the code
         '''
         
-        dices_sorted = sorted(dices)
-        stair = [x + 1 for x in range(1,6)]
-        
-        if dices_sorted == stair:
-            return sum(stair)
-        else:
-            return 0
+        return sum(list(range(2,7))) if sorted(dices) == list(range(2,7)) else Yatzy.NOPOINTS
     
 
     @staticmethod
@@ -287,4 +304,6 @@ class Yatzy:
                 else: 
                     result += number * dices.count(number)
                     
-        return result if switch is True else 0
+        return result if switch is True else Yatzy.NOPOINTS
+    
+print(Yatzy.x)
